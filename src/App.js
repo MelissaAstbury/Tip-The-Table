@@ -15,8 +15,9 @@ const App = () => {
   };
 
   return (
-    <form onSubmit={onSubmit}>
-      <div>
+    <div className="form-container">
+      <form onSubmit={onSubmit}>
+        <h1 className="title">Tip Calculator</h1>
         <p>How much is your bill?</p>
         <input
           type="number"
@@ -37,11 +38,11 @@ const App = () => {
             setPeople(e.target.value);
           }}
         />
-        <button type="submit">Calculate!</button>
+        <button type="submit">Calculate</button>
 
-        <p>Your should tip: £{tip}</p>
-      </div>
-    </form>
+        {tip > 0 && <p>You should tip: £{tip}</p>}
+      </form>
+    </div>
   );
 };
 
